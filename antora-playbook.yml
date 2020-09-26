@@ -20,7 +20,12 @@ content:
 
 asciidoc:
   attributes:
+# hide explicit component, show all unmentioned components:
     page-component-sort-order: component-b, !hidden, component-c , *
+# hide all unmentioned components:
+#    page-component-sort-order: component-b, component-c , !*
+# don't warn on not-existing component:
+#    page-component-sort-order: not-a-component?, component-b, !hidden, component-c , *
 
 ui:
   bundle:

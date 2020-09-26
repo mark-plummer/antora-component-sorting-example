@@ -6,7 +6,7 @@
     </div>
   {{/if}}
   <ul class="components">
-    {{#each (componentSorter site.components page.attributes.component-sort-order)}}
+    {{#each (componentVersionSorter "components" site.components page.attributes.component-sort-order)}}
       <li class="component{{#if (eq this.name @root.page.component.name)}} is-current{{/if}}">
         <span class="title">{{{./title}}}</span>
         <ul class="versions">
