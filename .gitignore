@@ -1,5 +1,9 @@
-/build/
+build
+build-full
+build-silly
+build-simple
 package-lock.json
 node
 node_modules
 .cache
+.idea

@@ -1,0 +1,82 @@
+= How to sort Antora components and versions in the UI
+
+This project shows several ways to sort components and versions in an Antora documentation project using a customized UI.
+
+In increasing sophistication, these are:
+
+* Silly: reversing the default component order
+* Simple: basic configuration of component order
+* Full: more sophisticated configuration of component order
+* Component-version: sorting both components and versions.
+
+== Prerequisites
+
+You need node and npm installed.
+
+== Instructions
+
+Run:
+
+[source,console]
+----
+npm run clean-install
+npm run build
+----
+
+This will install all needed modules and build all four examples.
+
+== Silly
+
+This has no configuration, and is a model if you want to write an unconfigurable hard-coded sorter.
+
+link:build-silly/index.html[]
+
+== Simple
+
+This is configured with a playbook key `asciidoc.attributes.page-component-sort-order` with a comma-separated list of components to show, in order.
+
+link:build-simple/index.html[]
+
+== Full
+
+This is configured with a playbook key `asciidoc.attributes.page-component-sort-order`.
+
+The key value is a comma-separated list of specifiers:
+
+Required component::
+  An explicit component name is placed in the order specified if present and warned if missing.
+Hidden component::
+  A component name prefixed with '!' is ommitted if present and warned if missing.
+Optional hidden component::
+  A component name prefixed with '!' and suffixed with '?' is ommitted if present.
+Wildcard include::
+  A '\*' includes all components not otherwise mentioned, in their original order, at the location of the '*'
+
+
+link:build-full/index.html[]
+
+== Component-version
+
+This is configured with a playbook key `asciidoc.attributes.page-component-sort-order` and component descriptor keys `asciidoc.attributes.version-sort-key`.
+
+Component sorting configuration (playbook `asciidoc.attributes.page-component-sort-order` key)::
+The key value is a comma-separated list of specifiers:
+Required component:::
+An explicit component name is placed in the order specified if present and warned if missing.
+Optional component:::
+A component name suffixed with '?'::: is placed in the order specified if present.
+Hidden component:::
+A component name prefixed with '!' is ommitted if present and warned if missing.
+Optional hidden component:::
+A component name prefixed with '!' and suffixed with '?' is ommitted if present.
+Wildcard include:::
+A '\*' includes all components not otherwise mentioned, in their original order, at the location of the '*'
+Wildcard hide:::
+A '!*' causes all components not otherwise mentioned to be excluded.
+Version sorting configuration, per component::
+* Version sorting is specified in the component descriptor with the `asciidoc.attributes.version-sort-key` key.
+* Versions with this key are ordered in reverse lexicographical order of key value.
+* Versions without this key are ordered after those with the key, in the original order.
+* The key value of '!' causes the version to be hidden.
+
+link:build/site/index.html[]]
