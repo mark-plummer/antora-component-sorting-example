@@ -1,6 +1,10 @@
 name: component-b
 title: Component B
-version: '1'
+version: '3'
 start_page: ROOT:index.adoc
 nav:
 - modules/ROOT/nav.adoc
+
+asciidoc:
+  attributes:
+    version-sort-key: a

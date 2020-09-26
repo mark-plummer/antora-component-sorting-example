@@ -1,6 +1,10 @@
-name: cbv1 
-title: Component cbv1 
-version: '1.0' 
-start_page: ROOT:index.adoc 
-nav: 
+name: component-b
+title: Component B
+version: '1'
+start_page: ROOT:index.adoc
+nav:
 - modules/ROOT/nav.adoc
+
+asciidoc:
+  attributes:
+    version-sort-key: c

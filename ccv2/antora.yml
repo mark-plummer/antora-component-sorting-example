@@ -4,3 +4,7 @@ version: '2'
 start_page: ROOT:index.adoc
 nav:
 - modules/ROOT/nav.adoc
+
+asciidoc:
+  attributes:
+    version-sort-key: c
