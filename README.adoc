@@ -4,10 +4,10 @@ This project shows several ways to sort components and versions in an Antora doc
 
 In increasing sophistication, these are:
 
-* Silly: reversing the default component order
-* Simple: basic configuration of component order
-* Full: more sophisticated configuration of component order
-* Component-version: sorting both components and versions.
+* <<Silly>>: reversing the default component order
+* <<Simple>>: basic configuration of component order
+* <<Full>>: more sophisticated configuration of component order
+* <<Component-version>>: sorting both components and versions.
 
 == Prerequisites
 
@@ -46,9 +46,9 @@ The key value is a comma-separated list of specifiers:
 Required component::
   An explicit component name is placed in the order specified if present and warned if missing.
 Hidden component::
-  A component name prefixed with '!' is ommitted if present and warned if missing.
+  A component name prefixed with '!' is hidden if present and warned if missing.
 Optional hidden component::
-  A component name prefixed with '!' and suffixed with '?' is ommitted if present.
+  A component name prefixed with '!' and suffixed with '?' is hidden if present.
 Wildcard include::
   A '\*' includes all components not otherwise mentioned, in their original order, at the location of the '*'
 
@@ -64,15 +64,15 @@ The key value is a comma-separated list of specifiers:
 Required component:::
 An explicit component name is placed in the order specified if present and warned if missing.
 Optional component:::
-A component name suffixed with '?'::: is placed in the order specified if present.
+A component name suffixed with '?' is placed in the order specified if present.
 Hidden component:::
-A component name prefixed with '!' is ommitted if present and warned if missing.
+A component name prefixed with '!' is hidden if present and warned if missing.
 Optional hidden component:::
-A component name prefixed with '!' and suffixed with '?' is ommitted if present.
+A component name prefixed with '!' and suffixed with '?' is hidden if present.
 Wildcard include:::
-A '\*' includes all components not otherwise mentioned, in their original order, at the location of the '*'
+A '\*' includes all components not otherwise mentioned, in their original order, at the position of the '*'
 Wildcard hide:::
-A '!*' causes all components not otherwise mentioned to be excluded.
+A '!*' causes all components not otherwise mentioned to be hidden.
 Version sorting configuration, per component::
 * Version sorting is specified in the component descriptor with the `asciidoc.attributes.version-sort-key` key.
 * Versions with this key are ordered in reverse lexicographical order of key value.
