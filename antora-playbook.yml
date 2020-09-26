@@ -1,0 +1,31 @@
+site:
+  title: Sorting Components and Versions
+  url: http://example.com
+
+content:
+  sources:
+  - url: .
+    start_paths:
+    - cav1
+    - cav2
+    - cav3
+    - cbv1
+    - cbv2
+    - cbv3
+    - ccv1
+    - ccv2
+    - ccv3
+    - hidden
+
+asciidoc:
+  attributes:
+    page-component-sort-order: component-b, !hidden, component-c , *
+
+ui:
+  bundle:
+    url: https://gitlab.com/antora/antora-ui-default/-/jobs/artifacts/master/raw/build/ui-bundle.zip?job=bundle-stable
+    snapshot: true
+#  supplemental_files: supplemental_ui
+
+output:
+  clean: true
