@@ -3,11 +3,11 @@
   "scripts": {
     "clean-build": "npm run clean-install;npm run build",
     "clean-install": "rm -rf node_modules/ .cache/ package-lock.json;npm i --cache=.cache/npm",
-    "build": "npm run build-component-version;npm run build-component-full;npm run build-component-simple;npm run build-component-silly;",
+    "build": "npm run build-component-version;npm run build-component-full;npm run build-component-simple;npm run build-component-autonomous;",
     "build-component-version": "node_modules/.bin/antora antora-playbook-component-version.yml --stacktrace --fetch --clean",
     "build-component-full": "node_modules/.bin/antora antora-playbook-component-full.yml --stacktrace --fetch --clean",
     "build-component-simple": "node_modules/.bin/antora antora-playbook-component-simple.yml --stacktrace --fetch --clean",
-    "build-component-silly": "node_modules/.bin/antora antora-playbook-component-silly.yml --stacktrace --fetch --clean"
+    "build-component-autonomous": "node_modules/.bin/antora antora-playbook-component-autonomous.yml --stacktrace --fetch --clean"
   },
   "devDependencies": {
     "@antora/cli": "^2.3.4",
