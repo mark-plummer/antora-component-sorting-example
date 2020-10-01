@@ -8,7 +8,7 @@ module.exports = (what, data, sortOrder = undefined) => {
   } else if (what === 'versions') {
     return sortVersions(data)
   } else {
-    console.log(`unexpected sort request: ${what}. Expected 'components' or 'versions`)
+    throw new Error(`unexpected sort request: ${what}. Expected 'components' or 'versions`)
   }
 }
 
@@ -54,7 +54,6 @@ function sortComponents (components, sortOrder = undefined) {
 }
 
 function sortComponentVersions (components) {
-  // const versionSorter = require('./versionSorter')
   return components.map((component) => {
     component = Object.assign({ name: component.name, title: component.title }, component)
     component.versions = sortVersions(component.versions)
